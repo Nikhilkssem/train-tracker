@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Result</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <h3>🚆 {{ data.name }}</h3>
+    <p>Train No: {{ data.number }}</p>
+    <p>Status: {{ data.status }}</p>
+    <p>Location: {{ data.location }}</p>
+    <p>Delay: {{ data.delay }}</p>
+
+    <hr>
+
+    <h4>📊 Delay Chart</h4>
+
+    <!-- ✅ Chart Canvas -->
+    <canvas id="delayChart"></canvas>
+
+</div>
+<!-- 🔽 Bottom Navigation -->
+<nav class="navbar fixed-bottom bg-dark text-white d-flex justify-content-around">
+    <span>🏠 Home</span>
+    <span>⭐ Favorites</span>
+    <span>📍 Track</span>
+</nav>
+
+
+<!-- ✅ Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- ✅ Chart Script -->
+<script>
+const ctx = document.getElementById('delayChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Station 1", "Station 2", "Station 3"],
+        datasets: [{
+            label: 'Delay (mins)',
+            data: [2, 5, 10],
+            borderWidth: 2
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
