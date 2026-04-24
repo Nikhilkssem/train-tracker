@@ -18,5 +18,4 @@ A Django-based web application to track train status, location, and delay.
 - Chart.js
 
 ## ▶️ Run Project
-pip install django
 python manage.py runserver
